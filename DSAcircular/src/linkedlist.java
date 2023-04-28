@@ -12,10 +12,10 @@ public class linkedlist {
      
        public void display() {
         node p = head;
-        while (p != null) {
+        while (p != head.previous) {
             System.out.print(" " + p.data);
             p = p.next;
-        }
+        }System.out.print(" " + p.data);
     }
        
       
@@ -26,8 +26,8 @@ public class linkedlist {
            head=newnode;
           // tail=newnode;
           // temp=newnode;
-          head.next=head;
-          head.previous=head;
+          head.next=newnode;
+          head.previous=newnode;
         }
         
         else{

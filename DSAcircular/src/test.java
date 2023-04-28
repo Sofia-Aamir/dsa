@@ -9,6 +9,8 @@ public class test {
        l.insertAtStart(7);
         l.insertAtStart(3);
         
+        l.insertAtStart(9);
+        
           l.display();
         
 //         System.out.println("\n\nSELECT ANY OPTION \n1.Insert at start\n2.insert after\n3.insert at end"
