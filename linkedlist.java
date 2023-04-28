@@ -1,84 +1,41 @@
 
-package node;
-import java.util.*;
 public class linkedlist {
-    node head;
+     node head;
     node tail;
-  //  node current=null;
+    node temp;
     
-    linkedlist(){
+     linkedlist(){
         head=null;
         tail=null;
+        temp=null;
     }
-    
-     public void display() {
+     
+       public void display() {
         node p = head;
         while (p != null) {
             System.out.print(" " + p.data);
             p = p.next;
         }
     }
-     
-    public void insertAtStart(int data){
-        node newnode=new node(data);
+       
+      
+       public void insertAtStart(int data){
+            node newnode=new node(data);
         
         if(head==null){
-            head=newnode;
-        }
-        else{
-            newnode.next=head;
-            head.previous=newnode;
-            head=newnode;
-        }
-        
-    }
-    
-    
-    
-    public void insertAtEnd(int data){
-       // node current;
-        node newnode=new node(data);
-        
-        if(head==null){
-            head=newnode;
+           head=newnode;
+          // tail=newnode;
+          // temp=newnode;
+          head.next=head;
+          head.previous=head;
         }
         
         else{
-        node current=head;
-            while(current.next != null) {
-                current = current.next;
-            }
-           newnode.previous=tail;
-           tail.next=newnode;
-           tail=newnode;
+            temp=tail.next;
+            newnode.next=temp;
+            newnode.previous=tail;
+            temp.previous=newnode;
+            tail.next=newnode;
         }
-    }
-   
-    public void insertAfter(int data,int key){
-        node newnode=new node(data);
-        if(head==null)
-            head=newnode;
-       else
-        {
-            node current=head;
-            while(current.next!=null && current.data!=key)
-            {
-                current=current.next;
-            }
-            
-            if(current==null)
-                return;
-            
-            newnode.next=current.next;
-            newnode.previous=current;
-            current.next=newnode;
-            
-            if(newnode.next!=null){
-                newnode.next.previous=newnode;
-            }
-        }
-            }
-        }
-    
-    
-
+       }
+}
